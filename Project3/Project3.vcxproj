@@ -127,7 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Project3.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="WordData.cpp" />
+    <ClCompile Include="WordDataList.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="test.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="WordData.h" />
+    <ClInclude Include="WordDataList.h" />
+    <ClInclude Include="WordList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
