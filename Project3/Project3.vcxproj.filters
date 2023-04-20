@@ -30,6 +30,9 @@
     <ClCompile Include="LinkedList.h">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="WordSTLSeq.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="test.txt" />
@@ -45,6 +48,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="WordCList.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WordSTLSeq.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

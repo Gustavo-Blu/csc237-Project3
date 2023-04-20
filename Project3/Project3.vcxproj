@@ -132,6 +132,7 @@
     <ClCompile Include="WordCList.cpp" />
     <ClCompile Include="WordData.cpp" />
     <ClCompile Include="WordDataList.cpp" />
+    <ClCompile Include="WordSTLSeq.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="test.txt" />
@@ -141,6 +142,7 @@
     <ClInclude Include="WordData.h" />
     <ClInclude Include="WordDataList.h" />
     <ClInclude Include="WordList.h" />
+    <ClInclude Include="WordSTLSeq.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
