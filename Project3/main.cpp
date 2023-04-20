@@ -18,16 +18,18 @@
 #include <fstream>
 #include "WordList.h"
 #include "WordDataList.h"
+#include "WordCList.h"
 // #include "WordData.h"        app only knows about the lists!
 
 void displayMenu();
-void printEverything(ifstream& inf, WordList* TheList);
+void printEverything(ifstream& inf, WordList* TheList, WordList* CList);
 
 
 int main(int argc, char* argv[])
 {
 	std::ifstream inf;
 	WordList* TheList = new WordDataList;
+	WordList* CList = new WordCList;
 
 	if (argc > 1) //if there was an input on the command line
 	{
@@ -37,7 +39,7 @@ int main(int argc, char* argv[])
 			std::cout << "Sorry, the file failed to open." << std::endl;
 			return 0;
 		}
-		printEverything(inf, TheList);
+		printEverything(inf, TheList, CList);
 		return 0;
 	}
 
@@ -51,6 +53,7 @@ int main(int argc, char* argv[])
 
 	// TheList is a pointer to a WordList that is pointed to a WordList subclass
 	TheList->parseIntoList(inf);
+	CList->parseIntoList(inf);
 
 	while (true)
 	{
@@ -69,6 +72,12 @@ int main(int argc, char* argv[])
 			TheList->printPtr();
 			break;
 		case '4':
+			CList->printIteratively();
+			break;
+		case '5':
+			CList->printRecursively();
+			break;
+		case '6':
 			std::cout << "Goodbye" << std::endl;
 			return 0;
 		default:
@@ -86,14 +95,20 @@ void displayMenu()
 	std::cout << "1. Object Array Iterative" << std::endl;
 	std::cout << "2. Object Array Recursive" << std::endl;
 	std::cout << "3. Object Array Pointer Recursive" << std::endl;
-	std::cout << "4. Quit" << std::endl;
+	std::cout << "4. Circular List Iterator" << std::endl;
+	std::cout << "5. Circular List Iterator" << std::endl;
+	std::cout << "6. Quit" << std::endl;
 }
 
-void printEverything(ifstream& inf, WordList* TheList)
+void printEverything(ifstream& inf, WordList* TheList, WordList* CList)
 {
 	TheList->parseIntoList(inf);
 	TheList->printIteratively();
 	TheList->printRecursively();
 	TheList->printPtr();
+
+	CList->parseIntoList(inf);
+	CList->printIteratively();
+	CList->printRecursively();
 }
 

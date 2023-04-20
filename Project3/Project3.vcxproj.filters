@@ -24,6 +24,12 @@
     <ClCompile Include="WordDataList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="WordCList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedList.h">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="test.txt" />
@@ -36,6 +42,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="WordDataList.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WordCList.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

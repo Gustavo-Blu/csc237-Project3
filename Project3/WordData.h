@@ -38,6 +38,8 @@ public:
 
 	//Increment
 	void incCount(int inc = 1);
+
+	bool operator==(const WordData& data);
 };
 
 ostream& operator<<(ostream& output, const WordData& words);

@@ -46,6 +46,11 @@ void WordData::incCount(int inc /*= 1*/)
 	m_Count += inc;
 }
 
+bool WordData::operator==(const WordData& data)
+{
+	return m_Word == data.m_Word && m_Count == data.m_Count;
+}
+
 std::ostream& operator<<(ostream& output, const WordData& words)
 {
 	output << words.getWord() << "\t\t" << words.getCount();

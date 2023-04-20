@@ -127,7 +127,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="LinkedList.h" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="WordCList.cpp" />
     <ClCompile Include="WordData.cpp" />
     <ClCompile Include="WordDataList.cpp" />
   </ItemGroup>
@@ -135,6 +137,7 @@
     <Text Include="test.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="WordCList.h" />
     <ClInclude Include="WordData.h" />
     <ClInclude Include="WordDataList.h" />
     <ClInclude Include="WordList.h" />
