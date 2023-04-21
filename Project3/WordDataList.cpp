@@ -53,8 +53,8 @@ void WordDataList::printRecursivelyWorker(int numWords)
 {
 	if (numWords == 1)
 	{
-		std::cout << "-------------------------=-" << std::endl;
-		std::cout << "|Object  Array  Iterative |" << std::endl;
+		std::cout << "---------------------------" << std::endl;
+		std::cout << "|Object  Array  Recursive |" << std::endl;
 		std::cout << "|Word         Occurrences |" << std::endl;
 		std::cout << "---------------------------" << std::endl;
 		std::cout << " " << m_TheWords[numWords - 1] << std::endl;
@@ -75,7 +75,7 @@ void WordDataList::printPtrWorker(int numWords)
 	if (!numWords)
 	{
 		std::cout << "---------------------------" << std::endl;
-		std::cout << "|Object  Array  Iterative |" << std::endl;
+		std::cout << "|Object  Array  Pointer   |" << std::endl;
 		std::cout << "|Word         Occurrences |" << std::endl;
 		std::cout << "---------------------------" << std::endl;
 		return;

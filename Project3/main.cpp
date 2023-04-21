@@ -19,10 +19,11 @@
 #include "WordList.h"
 #include "WordDataList.h"
 #include "WordCList.h"
+#include "WordSTLSeq.h"
 // #include "WordData.h"        app only knows about the lists!
 
 void displayMenu();
-void printEverything(ifstream& inf, WordList* TheList, WordList* CList);
+void printEverything(ifstream& inf, WordList* TheList, WordList* CList, WordList* SeqList);
 
 
 int main(int argc, char* argv[])
@@ -30,6 +31,7 @@ int main(int argc, char* argv[])
 	std::ifstream inf;
 	WordList* TheList = new WordDataList;
 	WordList* CList = new WordCList;
+	WordList* SeqList = new WordSTLseq;
 
 	if (argc > 1) //if there was an input on the command line
 	{
@@ -39,7 +41,7 @@ int main(int argc, char* argv[])
 			std::cout << "Sorry, the file failed to open." << std::endl;
 			return 0;
 		}
-		printEverything(inf, TheList, CList);
+		printEverything(inf, TheList, CList, SeqList);
 		return 0;
 	}
 
@@ -54,6 +56,7 @@ int main(int argc, char* argv[])
 	// TheList is a pointer to a WordList that is pointed to a WordList subclass
 	TheList->parseIntoList(inf);
 	CList->parseIntoList(inf);
+	SeqList->parseIntoList(inf);
 
 	while (true)
 	{
@@ -78,6 +81,12 @@ int main(int argc, char* argv[])
 			CList->printRecursively();
 			break;
 		case '6':
+			SeqList->printIteratively();
+			break;
+		case '7':
+			SeqList->printRecursively();
+			break;
+		case '8':
 			std::cout << "Goodbye" << std::endl;
 			return 0;
 		default:
@@ -96,11 +105,13 @@ void displayMenu()
 	std::cout << "2. Object Array Recursive" << std::endl;
 	std::cout << "3. Object Array Pointer Recursive" << std::endl;
 	std::cout << "4. Circular List Iterator" << std::endl;
-	std::cout << "5. Circular List Iterator" << std::endl;
-	std::cout << "6. Quit" << std::endl;
+	std::cout << "5. Circular List Recursive" << std::endl;
+	std::cout << "6. STL Vector Iterator" << std::endl;
+	std::cout << "7. STL Vector Recursive" << std::endl;
+	std::cout << "8. Quit" << std::endl;
 }
 
-void printEverything(ifstream& inf, WordList* TheList, WordList* CList)
+void printEverything(ifstream& inf, WordList* TheList, WordList* CList, WordList* SeqList)
 {
 	TheList->parseIntoList(inf);
 	TheList->printIteratively();
@@ -110,5 +121,9 @@ void printEverything(ifstream& inf, WordList* TheList, WordList* CList)
 	CList->parseIntoList(inf);
 	CList->printIteratively();
 	CList->printRecursively();
+
+	SeqList->parseIntoList(inf);
+	SeqList->printIteratively();
+	SeqList->printRecursively();
 }
 

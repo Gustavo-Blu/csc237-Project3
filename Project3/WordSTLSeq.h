@@ -19,4 +19,5 @@ public:
 	void printIteratively();
 
 	void printRecursively();
+	void printRecursivelyWorker(std::vector<WordData>::reverse_iterator curr);
 };

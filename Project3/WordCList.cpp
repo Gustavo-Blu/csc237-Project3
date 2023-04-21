@@ -46,7 +46,6 @@ void WordCList::parseIntoList(std::ifstream& infile)
 			m_Words.insert(*data);
 		}
 	}
-	std::cout << m_Words.m_Tail->m_Data;
 }
 
 void WordCList::printIteratively()
@@ -67,7 +66,7 @@ void WordCList::printIteratively()
 void WordCList::printRecursively()
 {
 	std::cout << "---------------------------" << std::endl;
-	std::cout << "|Circular  List  Iterator |" << std::endl;
+	std::cout << "|Circular  List  Recursive|" << std::endl;
 	std::cout << "|Word         Occurrences |" << std::endl;
 	std::cout << "---------------------------" << std::endl;
 
